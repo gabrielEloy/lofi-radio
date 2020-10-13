@@ -5,10 +5,12 @@ import { Background } from './index';
 
 describe('Background', () => {
     const mockBackgroundUrl = 'test url'
-    /* it('Should correctly set background image', () => {
+    
+    it('Should correctly set background image', () => {
         const { container } = render(<Background imageUrl={mockBackgroundUrl}/>)
-        expect(container.style.backgroundImage).toBe(mockBackgroundUrl);
-    }) */
+        expect(container.firstChild).toHaveStyleRule('background-image', `url(${mockBackgroundUrl})`)
+    });
+
     it('Should render the component with children', () => {
         const mockChildren = 'some random content';
         const { container } = render(
